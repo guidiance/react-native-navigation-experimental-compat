@@ -12,6 +12,7 @@
 
 const Animated = require('react-native').Animated;
 const Easing = require('react-native').Easing;
+const PropTypes = require('prop-types');
 const NavigationPropTypes = require('./NavigationPropTypes');
 const NavigationScenesReducer = require('./Reducer/NavigationScenesReducer');
 const React = require('react');
@@ -47,8 +48,6 @@ type State = {
   progress: NavigationAnimatedValue,
   scenes: Array<NavigationScene>,
 };
-
-const {PropTypes} = React;
 
 const DefaultTransitionSpec = {
   duration: 250,
