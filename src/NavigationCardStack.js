@@ -40,9 +40,14 @@ const NavigationTransitioner = require('./NavigationTransitioner');
 const React = require('react');
 const PropTypes = require('prop-types');
 const StyleSheet = require('react-native').StyleSheet;
-const View = require('react-native').View;
+const ReactNative = require('react-native');
 
 const {Directions} = NavigationCardStackPanResponder;
+
+const {
+  View,
+  ViewPropTypes,
+} = ReactNative;
 
 import type {
   NavigationState,
@@ -201,12 +206,12 @@ class NavigationCardStack extends React.Component<DefaultProps, Props, void> {
     /**
      * Custom style applied to the cards stack.
      */
-    style: View.propTypes.style,
+    style: (ViewPropTypes && ViewPropTypes.style) || View.propTypes.style,
 
     /**
      * Custom style applied to the scenes stack.
      */
-    scenesStyle: View.propTypes.style,
+    scenesStyle: (ViewPropTypes && ViewPropTypes.style) || View.propTypes.style,
   };
 
   static defaultProps: DefaultProps = {
